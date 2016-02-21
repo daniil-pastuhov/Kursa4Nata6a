@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+ext {
+    majorVersion = "0"
+    minorVersion = "1"
+    patchVersion = "1"
+}
+
+def computeVersionName() {
+    return majorVersion + "." + minorVersion + "." + patchVersion
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "by.genlife.just4you"
+        minSdkVersion 17
+        targetSdkVersion 23
+        versionCode 1
+        versionName computeVersionName()
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+}

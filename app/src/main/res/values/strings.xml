@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Just4You</string>
+
+    <string name="fragment_title_words">Words</string>
+    <string name="activity_title_word">Word</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_random">Random</string>
+    <string name="version_number">Version: %1$s</string>
+    <string name="btn_delete">Delete</string>
+</resources>
