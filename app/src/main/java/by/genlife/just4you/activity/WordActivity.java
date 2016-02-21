@@ -71,7 +71,7 @@ public class WordActivity extends BaseActivity {
             initPos = id;
             isRand = isRandom;
             mWordDAO = new WordDAO(getApplicationContext());
-            cursor = isRand ? mWordDAO.findAllRand(): mWordDAO.findAll();
+            cursor = isRand ? mWordDAO.findAllRand() : mWordDAO.findAll();
         }
 
         @Override

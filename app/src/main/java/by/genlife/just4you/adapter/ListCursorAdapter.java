@@ -24,8 +24,8 @@ public class ListCursorAdapter extends CursorRecyclerViewAdapter<ListCursorAdapt
     private Context mContext;
     private WordDAO mWordDAO;
 
-    public ListCursorAdapter(Context context, Cursor cursor){
-        super(context,cursor);
+    public ListCursorAdapter(Context context, Cursor cursor) {
+        super(context, cursor);
         mContext = context;
         mWordDAO = new WordDAO(context);
     }
@@ -35,6 +35,7 @@ public class ListCursorAdapter extends CursorRecyclerViewAdapter<ListCursorAdapt
         public TextView mName;
         public TextView mTranslation;
         public ImageView mFavorite;
+
         public ViewHolder(View view) {
             super(view);
             parent = view;
@@ -51,7 +52,7 @@ public class ListCursorAdapter extends CursorRecyclerViewAdapter<ListCursorAdapt
         itemView.findViewById(R.id.favorite).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mWordDAO.changeFavorite((long)v.getTag());
+                mWordDAO.changeFavorite((long) v.getTag());
                 changeCursor(mWordDAO.findAll());
             }
         });

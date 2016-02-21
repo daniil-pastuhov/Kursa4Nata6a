@@ -48,7 +48,7 @@ public abstract class AbstractDAO<T extends AbstractModel> {
         }
 
         long id = getDb().insert(getTableName(), null, cv);
-        object.id = (long) id;
+        object.id = id;
 
         return id;
     }

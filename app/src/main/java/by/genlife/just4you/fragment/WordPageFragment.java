@@ -69,7 +69,7 @@ public class WordPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 isFavorite = !isFavorite;
-                ((ImageView)v).setImageResource(isFavorite ? R.drawable.ic_favorite_black_24dp : R.drawable.ic_favorite_border_black_24dp);
+                ((ImageView) v).setImageResource(isFavorite ? R.drawable.ic_favorite_black_24dp : R.drawable.ic_favorite_border_black_24dp);
             }
         });
         return view;
