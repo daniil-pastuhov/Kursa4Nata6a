@@ -20,6 +20,7 @@
         </activity>
         <activity
             android:name=".activity.WordActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/activity_title_word" />
     </application>
 

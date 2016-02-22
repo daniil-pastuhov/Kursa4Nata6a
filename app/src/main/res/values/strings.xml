@@ -11,4 +11,8 @@
     <string name="action_random">Random</string>
     <string name="version_number">Version: %1$s</string>
     <string name="btn_delete">Delete</string>
+    <string name="hint_word">English</string>
+    <string name="hint_translations">Translations</string>
+    <string name="favorite">Favorite</string>
+    <string name="action_delete">Delete</string>
 </resources>

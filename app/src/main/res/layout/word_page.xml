@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
 
-    <ImageView
-        android:id="@+id/favorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/double_padding"
-        android:background="@android:drawable/list_selector_background"
-        android:src="@drawable/ic_favorite_border_black_24dp" />
-
-    <EditText
-        android:id="@+id/name"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:inputType="text"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/gray" />
+        <ImageView
+            android:id="@+id/favorite"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="@dimen/double_padding"
+            android:layout_gravity="right"
+            android:background="@android:drawable/list_selector_background"
+            android:src="@drawable/star" />
 
-    <EditText
-        android:id="@+id/translation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:hint="@string/hint_word"
+            android:layout_height="wrap_content" />
 
-</LinearLayout>
+        <View
+            android:paddingTop="@dimen/double_padding"
+            android:paddingBottom="@dimen/double_padding"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gray" />
+
+        <EditText
+            android:id="@+id/translation"
+            android:hint="@string/hint_translations"
+            android:minLines="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -3,6 +3,7 @@ package by.genlife.just4you.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,12 +65,12 @@ public class WordPageFragment extends Fragment {
         else word = new Word();
 
         ImageView fav = (ImageView) view.findViewById(R.id.favorite);
-        fav.setImageResource(word.isFavorite ? R.drawable.ic_favorite_black_24dp : R.drawable.ic_favorite_border_black_24dp);
+        fav.setImageResource(word.isFavorite ? R.drawable.star_fill : R.drawable.star);
         fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isFavorite = !isFavorite;
-                ((ImageView) v).setImageResource(isFavorite ? R.drawable.ic_favorite_black_24dp : R.drawable.ic_favorite_border_black_24dp);
+                ((ImageView) v).setImageResource(isFavorite ? R.drawable.star_fill : R.drawable.star);
             }
         });
         return view;
@@ -88,11 +89,13 @@ public class WordPageFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        word.isFavorite = isFavorite;
-        word.name = nameEdit.getText().toString();
-        word.translations = parseTranses(translationEdit.getText().toString());
-        mWordDAO.insertOrUpdate(word);
-        getContext().sendBroadcast(new Intent(WordsFragment.ACTION_DATA_CHANGED));
+        if (!TextUtils.isEmpty(nameEdit.getText())) {
+            word.isFavorite = isFavorite;
+            word.name = nameEdit.getText().toString();
+            word.translations = parseTranses(translationEdit.getText().toString());
+            mWordDAO.insertOrUpdate(word);
+            getContext().sendBroadcast(new Intent(WordsFragment.ACTION_DATA_CHANGED));
+        }
         super.onDestroyView();
     }
 

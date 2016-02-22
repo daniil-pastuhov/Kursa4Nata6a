@@ -68,7 +68,7 @@ public class WordDAO extends AbstractDAO<Word> {
 
     @Override
     public Cursor findAll() {
-        return super.where(null, NAME);
+        return super.where(null, IS_FAVORITE + " DESC ," + NAME);
     }
 
     public Cursor findAllRand() {

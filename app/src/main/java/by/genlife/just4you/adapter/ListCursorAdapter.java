@@ -75,7 +75,7 @@ public class ListCursorAdapter extends CursorRecyclerViewAdapter<ListCursorAdapt
         }
         translations.append("...");
         viewHolder.mTranslation.setText(translations.toString());
-        viewHolder.mFavorite.setImageResource(word.isFavorite ? R.drawable.ic_favorite_black_24dp : R.drawable.ic_favorite_border_black_24dp);
+        viewHolder.mFavorite.setImageResource(word.isFavorite ? R.drawable.star_fill : R.drawable.star);
         viewHolder.mFavorite.setTag(word.id);
         viewHolder.parent.setTag(word.id);
     }
