@@ -1,11 +1,9 @@
-package by.genlife.just4you.word;
+package by.genlife.just4you.db;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 
-import by.genlife.just4you.db.AbstractDAO;
-import by.genlife.just4you.db.TableBuilder;
 import by.genlife.just4you.model.Word;
 
 /**

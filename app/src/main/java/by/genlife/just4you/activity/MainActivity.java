@@ -11,6 +11,7 @@ import android.view.MenuItem;
 
 import by.genlife.just4you.R;
 import by.genlife.just4you.fragment.MainFragment;
+import by.genlife.just4you.fragment.TopicsFragment;
 import by.genlife.just4you.fragment.WordsFragment;
 
 public class MainActivity extends BaseActivity
@@ -77,8 +78,8 @@ public class MainActivity extends BaseActivity
         if (id == R.id.nav_words) {
             showFragmentInContentFrame(new WordsFragment());
 
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.nav_topics) {
+            showFragmentInContentFrame(new TopicsFragment());
 
         } else if (id == R.id.nav_share) {
 

@@ -4,8 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import by.genlife.just4you.word.WordDAO;
-
 /**
  * Created by NotePad.by on 21.02.2016.
  */
@@ -13,7 +11,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String TAG = DBHelper.class.getName();
     public static final String DB_NAME = "db";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 3;
     private static DBHelper mInstance;
 
     private DBHelper(Context context) {
@@ -34,16 +32,27 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         createTable(db, WordDAO.buildCreateTableString());
-
+        createTable(db, ThemeDAO.buildCreateTableString());
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        if (newVersion > 1) {
+            createTable(db, ThemeDAO.buildCreateTableString());
+            createTable(db, TopicDAO.buildCreateTableString());
+        }
+        if (newVersion > 2) {
+            alterTableAddColumn(db, ThemeDAO.TABLE, ThemeDAO.TOPIC_ID, TableBuilder.TYPE_INTEGER, 0);
+        }
     }
 
     protected void createTable(SQLiteDatabase db, String tableSql) {
         execSQL(db, tableSql);
+    }
+
+    protected void alterTableAddColumn(SQLiteDatabase db, String tableName, String columnName, String columnType,
+                                       int defaultValue) {
+        execSQL(db, TableBuilder.alterTableAddColumn(tableName, columnName, columnType, defaultValue));
     }
 
     protected void execSQL(SQLiteDatabase db, String sql) {

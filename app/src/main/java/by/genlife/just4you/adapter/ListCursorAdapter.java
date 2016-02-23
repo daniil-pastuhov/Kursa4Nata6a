@@ -16,7 +16,7 @@ import android.widget.TextView;
 import by.genlife.just4you.R;
 import by.genlife.just4you.activity.WordActivity;
 import by.genlife.just4you.model.Word;
-import by.genlife.just4you.word.WordDAO;
+import by.genlife.just4you.db.WordDAO;
 
 
 public class ListCursorAdapter extends CursorRecyclerViewAdapter<ListCursorAdapter.ViewHolder> {

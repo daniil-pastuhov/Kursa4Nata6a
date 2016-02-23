@@ -20,7 +20,7 @@ import android.widget.AdapterView;
 import by.genlife.just4you.R;
 import by.genlife.just4you.activity.WordActivity;
 import by.genlife.just4you.adapter.ListCursorAdapter;
-import by.genlife.just4you.word.WordDAO;
+import by.genlife.just4you.db.WordDAO;
 
 /**
  * Created by NotePad.by on 21.02.2016.

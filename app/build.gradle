@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 ext {
-    majorVersion = "0"
-    minorVersion = "1"
+    majorVersion = "1"
+    minorVersion = "0"
     patchVersion = "1"
 }
 
@@ -18,7 +18,7 @@ android {
         applicationId "by.genlife.just4you"
         minSdkVersion 17
         targetSdkVersion 23
-        versionCode 1
+        versionCode 3
         versionName computeVersionName()
     }
     buildTypes {

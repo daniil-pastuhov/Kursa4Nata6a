@@ -20,8 +20,19 @@
         </activity>
         <activity
             android:name=".activity.WordActivity"
+            android:label="@string/activity_title_word"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.CreateTopicActivity"
+            android:label="@string/activity_title_create_topic"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ThemeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ThemeViewActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/activity_title_word" />
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>
