@@ -33,6 +33,7 @@ public class WordsFragment extends BaseFragment implements View.OnClickListener 
     private WordDAO mWordDAO;
     private ListCursorAdapter adapter;
     private BroadcastReceiver mReceiver = new DataWasChangedReceiver();
+    private boolean isRandom = false;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -84,7 +85,10 @@ public class WordsFragment extends BaseFragment implements View.OnClickListener 
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_random) {
-            adapter.changeCursor(mWordDAO.findAllRand());
+            isRandom = !isRandom;
+            adapter.setIsRandom(isRandom);
+            item.setIcon(!isRandom ? R.drawable.ic_equalizer_white_36dp : R.drawable.ic_sort_white_36dp);
+            adapter.changeCursor(isRandom ? mWordDAO.findAllRand() : mWordDAO.findAll());
             return true;
         }
 

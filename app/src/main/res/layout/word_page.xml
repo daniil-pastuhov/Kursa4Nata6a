@@ -3,15 +3,15 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/favorite"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
             android:padding="@dimen/double_padding"
             android:layout_gravity="right"
             android:background="@android:drawable/list_selector_background"
@@ -20,13 +20,16 @@
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
+            android:layout_above="@+id/centerView"
             android:inputType="text"
             android:hint="@string/hint_word"
             android:layout_height="wrap_content" />
 
         <View
-            android:paddingTop="@dimen/double_padding"
+            android:id="@+id/centerView"
+            android:layout_marginTop="16dp"
             android:paddingBottom="@dimen/double_padding"
+            android:layout_above="@+id/translation"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/gray" />
@@ -35,9 +38,10 @@
             android:id="@+id/translation"
             android:hint="@string/hint_translations"
             android:minLines="3"
+            android:layout_centerInParent="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

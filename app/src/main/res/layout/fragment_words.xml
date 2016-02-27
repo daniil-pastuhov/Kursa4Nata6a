@@ -7,7 +7,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/words_list"
         android:layout_margin="@dimen/fab_margin"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <android.support.design.widget.FloatingActionButton
@@ -20,6 +20,6 @@
         app:layout_anchor="@id/words_list"
         app:layout_anchorGravity="bottom|right|end"
         app:elevation="6dp"
-        app:layout_behavior=".utils.ScrollFabViewPagerBehavior" />
+        app:layout_behavior=".utils.ScrollAwareFABBehavior" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -33,6 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         createTable(db, WordDAO.buildCreateTableString());
         createTable(db, ThemeDAO.buildCreateTableString());
+        createTable(db, TopicDAO.buildCreateTableString());
     }
 
     @Override

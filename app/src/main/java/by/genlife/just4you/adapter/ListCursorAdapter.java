@@ -23,6 +23,7 @@ public class ListCursorAdapter extends CursorRecyclerViewAdapter<ListCursorAdapt
 
     private Context mContext;
     private WordDAO mWordDAO;
+    private boolean isRandom;
 
     public ListCursorAdapter(Context context, Cursor cursor) {
         super(context, cursor);
@@ -53,7 +54,7 @@ public class ListCursorAdapter extends CursorRecyclerViewAdapter<ListCursorAdapt
             @Override
             public void onClick(View v) {
                 mWordDAO.changeFavorite((long) v.getTag());
-                changeCursor(mWordDAO.findAll());
+                changeCursor(isRandom ? mWordDAO.findAllRand() : mWordDAO.findAll());
             }
         });
         itemView.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +64,10 @@ public class ListCursorAdapter extends CursorRecyclerViewAdapter<ListCursorAdapt
             }
         });
         return new ViewHolder(itemView);
+    }
+
+    public void setIsRandom(boolean isRandom) {
+        this.isRandom = isRandom;
     }
 
     @Override

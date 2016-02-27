@@ -35,6 +35,6 @@
         app:layout_anchor="@id/view_pager"
         app:layout_anchorGravity="bottom|right|end"
         app:elevation="6dp"
-        app:layout_behavior=".utils.ScrollAwareFABBehavior" />
+        app:layout_behavior=".utils.ScrollFabViewPagerBehavior" />
 
 </android.support.design.widget.CoordinatorLayout>
